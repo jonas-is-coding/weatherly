@@ -6,13 +6,9 @@ import {
   TouchableOpacity,
   Keyboard,
 } from "react-native";
-import {
-  MagnifyingGlassIcon as SearchIcon,
-  MapPinIcon,
-} from "react-native-heroicons/solid";
 import { debounce } from "lodash";
 import { fetchLocations, fetchWeatherForecast } from "../api/weather";
-import { X } from "lucide-react-native";
+import { X, Search, MapPin } from "lucide-react-native";
 
 interface NavBarProps {
   weather: any;
@@ -83,7 +79,7 @@ const NavBar = ({ weather, onLocationSelect }: NavBarProps) => {
           onPress={() => setShowSearchBar(!showSearchBar)}
           className="p-3 rounded-full m-1"
         >
-          {showSearchBar ? <X size={25} color="white" /> : <SearchIcon size={25} color="white" />}
+          {showSearchBar ? <X size={25} color="white" /> : <Search size={25} color="white" />}
         </TouchableOpacity>
       </View>
 
@@ -101,7 +97,7 @@ const NavBar = ({ weather, onLocationSelect }: NavBarProps) => {
                 key={index}
                 className="flex-row items-center m-1 p-3 px-4"
               >
-                <MapPinIcon size={20} color={"black"} />
+                <MapPin size={20} color={"black"} />
                 <Text className="text-black font-bold text-lg ml-2">
                   {loc.name}, {loc.country}
                 </Text>
