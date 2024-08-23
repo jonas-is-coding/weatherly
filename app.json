@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "weatherly",
-    "slug": "weatherly",
+    "name": "weather-app",
+    "slug": "weather-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,7 +12,10 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "We need your location to show the weather in your area."
+      }
     },
     "android": {
       "adaptiveIcon": {
